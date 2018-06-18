@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Optimización de Cosechas</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}">        
+        <link rel="stylesheet" type="text/css" href="{% static 'icon/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+                    
+       
+
+    	<div class="container">
+    	    
+    	    <h4 class="center-align">Optimización Cosecha de Parcelas</h4>
+    	    
+    	    <div class="row">
+                <form action="#" enctype="multipart/form-data" id="id-form-input" method ='POST' action=".">
+                    {% csrf_token %}
+                    <div class="row">
+                        
+                        <div class="file-field input-field col s12">
+                          <div class="btn green lighten-2">
+                            <span>Entrada</span>
+                            {{ form.file }}
+                            <!--input type="file"-->
+                          </div>
+                          <div class="file-path-wrapper">
+                            
+                            <input class="file-path validate" type="text" id="input-input-file">
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="center-align">
+                                <a href="{% static "salida.txt" %}" download class="waves-effect waves-light btn green lighten-2" onclick="document.getElementById('id-form-input').submit(); return false;"><i class="material-icons left">cloud_upload</i>Subir</a>
+                            </div>
+                        </div>
+                     </div>
+                     
+                    <div  class="row">
+                        <hr>
+                    </div>
+                     
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="center-align">
+                                <a href="{% static "salida.txt" %}" download class="waves-effect waves-light btn green lighten-2"><i class="material-icons left">cloud_download</i>Salida</a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                     
+                     
+                     
+                    <div class="row">
+                        <div id="salida">
+                            
+                        </div>
+                    </div>
+                  </form>
+            </div>
+            
+    	</div>       
+
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/materialize.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
